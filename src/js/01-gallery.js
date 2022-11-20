@@ -1,4 +1,6 @@
 // Add imports above this line
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css"
 import { galleryItems } from './gallery-items';
 // Change code below this line
 
@@ -38,11 +40,12 @@ function handlerClickInage(event) {
   if (!targetValue) {
     return;
   }
+  instance = new SimpleLightbox('.gallery a');
 
-  instance = basicLightbox.create(` <img src="${targetValue}" width="800" height="600">`, {
-    onShow: () => window.addEventListener('keydown', closebyEscape),
-    onClose: () => window.removeEventListener('keydown', closebyEscape),
-  });
+//   instance = basicLightbox.create(` <img src="${targetValue}" width="800" height="600">`, {
+//     onShow: () => window.addEventListener('keydown', closebyEscape),
+//     onClose: () => window.removeEventListener('keydown', closebyEscape),
+//   });
   instance.show();
 }
 
