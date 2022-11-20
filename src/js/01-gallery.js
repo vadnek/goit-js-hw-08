@@ -40,7 +40,11 @@ function handlerClickInage(event) {
   if (!targetValue) {
     return;
   }
-  instance = new SimpleLightbox('.gallery a');
+
+  instance = new SimpleLightbox('.gallery a', {
+        onShow: () => window.addEventListener('keydown', closebyEscape),
+        onClose: () => window.removeEventListener('keydown', closebyEscape),
+      });
 
 //   instance = basicLightbox.create(` <img src="${targetValue}" width="800" height="600">`, {
 //     onShow: () => window.addEventListener('keydown', closebyEscape),
