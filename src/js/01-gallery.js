@@ -41,7 +41,7 @@ function handlerClickInage(event) {
     return;
   }
 
-  instance = new SimpleLightbox('.gallery a', {
+  instance = new SimpleLightbox('.gallery a', {captionsData: 'alt'}, {
         onShow: () => window.addEventListener('keydown', closebyEscape),
         onClose: () => window.removeEventListener('keydown', closebyEscape),
       });
